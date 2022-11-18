@@ -1,6 +1,6 @@
-package de.lambda9.openapi.generator.maven.plugin
+package de.phillemove.openapi.generator.maven.plugin
 
-import de.lambda9.openapi.generator.generateApi
+import de.phillemove.openapi.generator.generateApi
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugins.annotations.Mojo
 import org.apache.maven.plugins.annotations.Parameter

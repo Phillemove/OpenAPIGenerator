@@ -1,4 +1,4 @@
-package de.lambda9.openapi.generator
+package de.phillemove.openapi.generator
 
 import com.reprezen.kaizen.oasparser.OpenApi3Parser
 import com.reprezen.kaizen.oasparser.model3.*

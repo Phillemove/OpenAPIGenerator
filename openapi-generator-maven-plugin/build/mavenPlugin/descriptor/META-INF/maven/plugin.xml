@@ -5,7 +5,7 @@
 <plugin>
   <name>openapi-generator-maven-plugin</name>
   <description></description>
-  <groupId>de.lambda9</groupId>
+  <groupId>de.phillemove</groupId>
   <artifactId>openapi-generator-maven-plugin</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <goalPrefix>openapi-generator</goalPrefix>
@@ -20,7 +20,7 @@
       <aggregator>false</aggregator>
       <requiresOnline>false</requiresOnline>
       <inheritedByDefault>true</inheritedByDefault>
-      <implementation>de.lambda9.openapi.generator.maven.plugin.OpenApiGeneratorMojo</implementation>
+      <implementation>de.phillemove.openapi.generator.maven.plugin.OpenApiGeneratorMojo</implementation>
       <language>java</language>
       <instantiationStrategy>per-lookup</instantiationStrategy>
       <executionStrategy>once-per-session</executionStrategy>
@@ -73,7 +73,7 @@
   </mojos>
   <dependencies>
     <dependency>
-      <groupId>de.lambda9</groupId>
+      <groupId>de.phillemove</groupId>
       <artifactId>openapi-generator</artifactId>
       <type>jar</type>
       <version>1.0.0-SNAPSHOT</version>

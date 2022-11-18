@@ -7,8 +7,10 @@ plugins {
 
 val mavenUser: String? by project
 val mavenPassword: String? by project
+// Put Path to Nexus Repository Server here
+val path: String = ""
 
-group = "de.lambda9"
+group = "de.phillemove"
 version = "1.0.0-SNAPSHOT"
 
 repositories {
@@ -25,7 +27,7 @@ publishing {
     repositories {
         maven {
             name = "openapi-generator-maven-plugin"
-            url = uri("https://repository.lambda9.de/repository/maven-snapshots")
+            url = uri(path)
             credentials {
                 username = mavenUser
                 password = mavenPassword

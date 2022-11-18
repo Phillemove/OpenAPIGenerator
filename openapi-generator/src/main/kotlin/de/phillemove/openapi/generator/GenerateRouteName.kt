@@ -1,4 +1,4 @@
-package de.lambda9.openapi.generator
+package de.phillemove.openapi.generator
 
 import java.util.*
 

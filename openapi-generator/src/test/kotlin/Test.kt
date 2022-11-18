@@ -1,4 +1,4 @@
-import de.lambda9.openapi.generator.generateApi
+import de.phillemove.openapi.generator.generateApi
 import java.io.File
 
 fun main() {

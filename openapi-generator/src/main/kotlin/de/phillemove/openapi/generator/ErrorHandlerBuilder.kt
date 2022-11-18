@@ -1,4 +1,4 @@
-package de.lambda9.openapi.generator
+package de.phillemove.openapi.generator
 
 import com.squareup.kotlinpoet.*
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
@@ -36,33 +36,43 @@ private fun buildConstraintErrorInterface(packageName: String): TypeSpec {
 
     val iFace = TypeSpec.interfaceBuilder("ConstraintError").addModifiers(KModifier.SEALED)
 
-    iFace.addType(buildDataClass(packageName, "MissingRequiredParam", listOf(
+    iFace.addType(
+        buildDataClass(packageName, "MissingRequiredParam", listOf(
         "name" to String::class.asClassName(),
         "description" to String::class.asClassName(),
-    )))
+    ))
+    )
 
-    iFace.addType(buildDataClass(packageName, "MinLength", listOf(
+    iFace.addType(
+        buildDataClass(packageName, "MinLength", listOf(
         "name" to String::class.asClassName(),
         "description" to String::class.asClassName(),
         "min" to Int::class.asClassName(),
-    )))
+    ))
+    )
 
-    iFace.addType(buildDataClass(packageName, "MaxLength", listOf(
+    iFace.addType(
+        buildDataClass(packageName, "MaxLength", listOf(
         "name" to String::class.asClassName(),
         "description" to String::class.asClassName(),
         "max" to Int::class.asClassName(),
-    )))
+    ))
+    )
 
-    iFace.addType(buildDataClass(packageName, "RegexMatch", listOf(
+    iFace.addType(
+        buildDataClass(packageName, "RegexMatch", listOf(
         "name" to String::class.asClassName(),
         "description" to String::class.asClassName(),
         "regex" to String::class.asClassName(),
-    )))
-    iFace.addType(buildDataClass(packageName, "MissingListItemError", listOf(
+    ))
+    )
+    iFace.addType(
+        buildDataClass(packageName, "MissingListItemError", listOf(
         "name" to String::class.asClassName(),
         "description" to String::class.asClassName(),
         "min" to Int::class.asClassName()
-    )))
+    ))
+    )
     return iFace.build()
 }
 
@@ -116,7 +126,8 @@ private fun buildDefaultErrorHandler(packageName: String): TypeSpec {
         .addSuperinterface(ClassName(packageName, "ErrorHandler"))
 
     obj.addFunction(getConstraintErrorFunction(packageName, KModifier.OVERRIDE).addStatement("call.respond(HttpStatusCode.BadRequest, errors)").build())
-    obj.addFunction(getInternalErrorFunction(KModifier.OVERRIDE)
+    obj.addFunction(
+        getInternalErrorFunction(KModifier.OVERRIDE)
         .addStatement("call.respond(HttpStatusCode.InternalServerError, (t.message ?: \"\") +  \n (t.cause?.message.let{\"|\$it\"}) ?: \"\")").build())
 
     return obj.build()
