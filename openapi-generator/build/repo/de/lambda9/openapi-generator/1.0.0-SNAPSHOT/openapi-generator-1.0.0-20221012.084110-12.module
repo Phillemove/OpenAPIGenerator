@@ -1,0 +1,166 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.lambda9",
+    "module": "openapi-generator",
+    "version": "1.0.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 18,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "openapi-generator-1.0.0-SNAPSHOT.jar",
+          "url": "openapi-generator-1.0.0-SNAPSHOT.jar",
+          "size": 60233,
+          "sha512": "cd20ca1b22c4b45fbd1dbf3377c7bea1304a5ebf04dcf47e9f7fb15958360667adf172ffa17e7d48802a68dad72d3df674acbb69e835e372c2d6b54fa9d846f8",
+          "sha256": "2e166ff7f907d399ff6b554f7e55f7f48850aa898b61f458b43878eb0bf86d6d",
+          "sha1": "6fe2cb3f11afb8e69332ea1ee6f397c7779f016c",
+          "md5": "297676e85950fec390a42b921d59b565"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 18,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.ktor",
+          "module": "ktor-server-core-jvm",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-server-netty-jvm",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-server-html-builder",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-server-status-pages-jvm",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-server-default-headers-jvm",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-server-content-negotiation",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-server-jetty-jvm",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-serialization-kotlinx-json",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-server-test-host-jvm",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "ch.qos.logback",
+          "module": "logback-classic",
+          "version": {
+            "requires": "1.2.11"
+          }
+        },
+        {
+          "group": "com.squareup",
+          "module": "kotlinpoet",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "com.reprezen.kaizen",
+          "module": "openapi-parser",
+          "version": {
+            "requires": "4.0.4"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "openapi-generator-1.0.0-SNAPSHOT.jar",
+          "url": "openapi-generator-1.0.0-SNAPSHOT.jar",
+          "size": 60233,
+          "sha512": "cd20ca1b22c4b45fbd1dbf3377c7bea1304a5ebf04dcf47e9f7fb15958360667adf172ffa17e7d48802a68dad72d3df674acbb69e835e372c2d6b54fa9d846f8",
+          "sha256": "2e166ff7f907d399ff6b554f7e55f7f48850aa898b61f458b43878eb0bf86d6d",
+          "sha1": "6fe2cb3f11afb8e69332ea1ee6f397c7779f016c",
+          "md5": "297676e85950fec390a42b921d59b565"
+        }
+      ]
+    }
+  ]
+}

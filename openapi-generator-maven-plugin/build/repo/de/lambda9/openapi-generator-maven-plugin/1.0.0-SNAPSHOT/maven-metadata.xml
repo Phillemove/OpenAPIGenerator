@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>de.lambda9</groupId>
+  <artifactId>openapi-generator-maven-plugin</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20221111.095338</timestamp>
+      <buildNumber>22</buildNumber>
+    </snapshot>
+    <lastUpdated>20221111095338</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>1.0.0-20221111.095338-22</value>
+        <updated>20221111095338</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0.0-20221111.095338-22</value>
+        <updated>20221111095338</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0.0-20221111.095338-22</value>
+        <updated>20221111095338</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

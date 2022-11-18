@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.lambda9",
+    "module": "openapi-generator-maven-plugin",
+    "version": "1.0.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "openapi-generator-maven-plugin-1.0.0-SNAPSHOT.jar",
+          "url": "openapi-generator-maven-plugin-1.0.0-SNAPSHOT.jar",
+          "size": 6544,
+          "sha512": "2d12424964e2cfbfc8b30f5dca348d372e1790c144de9d611914ed07489fb083e5db848f9296feddef1637ad0abd847ccfa7dedb1abaf84a495e35982cc5fe68",
+          "sha256": "7cb5c409b06901c863b19bc95be4dbeb00180760479d056d8bf8d2e4991eba7d",
+          "sha1": "25a5d8cc73e7ebf4ea6b84e1b7968ad92816123e",
+          "md5": "f0ed8bf6b9885b30e9e4350f5f1bffd0"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.apache.maven",
+          "module": "maven-plugin-api",
+          "version": {
+            "requires": "3.8.6"
+          }
+        },
+        {
+          "group": "org.apache.maven",
+          "module": "maven-core",
+          "version": {
+            "requires": "3.8.6"
+          }
+        },
+        {
+          "group": "de.lambda9",
+          "module": "generator",
+          "version": {
+            "requires": "1.0.0-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlinx",
+              "module": "kotlinx-coroutines-bom"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "openapi-generator-maven-plugin-1.0.0-SNAPSHOT.jar",
+          "url": "openapi-generator-maven-plugin-1.0.0-SNAPSHOT.jar",
+          "size": 6544,
+          "sha512": "2d12424964e2cfbfc8b30f5dca348d372e1790c144de9d611914ed07489fb083e5db848f9296feddef1637ad0abd847ccfa7dedb1abaf84a495e35982cc5fe68",
+          "sha256": "7cb5c409b06901c863b19bc95be4dbeb00180760479d056d8bf8d2e4991eba7d",
+          "sha1": "25a5d8cc73e7ebf4ea6b84e1b7968ad92816123e",
+          "md5": "f0ed8bf6b9885b30e9e4350f5f1bffd0"
+        }
+      ]
+    }
+  ]
+}

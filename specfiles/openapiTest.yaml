@@ -1,0 +1,95 @@
+openapi: 3.0.3
+info:
+  title: TestSpec
+  description: TestSpecification
+  version: v1
+servers: 
+  - url: http://localhost:8080
+    description: Local Server-Address
+
+paths:
+  /api:
+    get:
+      description: Get-Request
+      operationId: getRequest
+      responses:
+        '200':
+          description: OK
+  
+  /api/{customer}:
+    post:
+      description: Post Userdata
+      operationId: postUser
+      parameters: 
+        - name: customer
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: ok
+        '400':
+          description: BadBody
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadBody'
+    get:
+      description: Gets User
+      operationId: getUser
+      parameters:
+        - name: customer
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+
+components:
+  schemas:
+    BadBody:
+      description: Schema for bad body
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+    Customer:
+      required:
+        - id
+        - lastname
+      type: object
+      properties:
+        id:
+          type: integer
+        surname:
+          type: string
+        lastname:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address'
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        number:
+          type: integer
+        location:
+          type: string
+        zip:
+          type: number
+          

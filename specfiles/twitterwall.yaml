@@ -1,0 +1,226 @@
+openapi: 3.0.0
+info:
+  title: Twitterwall
+  description: Spec for Twitterwall
+  version: v1
+servers: 
+  - url: http://localhost:8080
+    description: Local Server-Address
+paths:
+  /:
+    get:
+      description: Get-Request
+      responses:
+        '200':
+          description: OK
+  /search:
+    post:
+      description: Search-Endpoint
+      operationId: Search
+      parameters:
+        - name: queryparam
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '203':
+          description: bla
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tweet'
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Unauthorized
+          content:
+            text/html:
+              schema:
+                type: string
+  /login:
+    get:
+      description: Login Endpoint
+      operationId: Login
+      parameters:
+        - name: loguser
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: logpass
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/History'
+        '403':
+          description: Wrong Password
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: User unknown
+          content:
+            text/html:
+              schema:
+                type: string
+  /register:
+    get:
+      description: Register Endpoint
+      operationId: Register
+      parameters:
+        - name: regiser
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: regpass
+          in: header
+          required: true
+          schema:
+            type: string
+            pattern: ^\+\d{8,}$
+      responses:
+        '200':
+          description: Register successfull
+          content:
+            text/html:
+              schema:
+                type: string
+        '460':
+          description: User already exists
+          content:
+            text/html:
+              schema:
+                type: string
+  /searchhistory:
+    post:
+      description: Endpoint to get the Searchhistory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/History'
+      responses:
+        '200':
+          description: Save successfull
+          content:
+            text/html:
+              schema:
+                type: string
+        '403':
+          description: Unauthorized User
+          content:
+            text/html:
+              schema:
+                type: string
+
+  /test:
+    post:
+      description: Endpoint to get the text
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/History'
+      responses:
+        '200':
+          description: Save successfull
+          content:
+            '*/*':
+              schema:
+                type: string
+        '403':
+          description: Unauthorized User
+        '460':
+          description: User already exists
+          content:
+            text/html:
+              schema:
+                type: string
+
+components:
+  schemas:
+    Tweet:
+      description: Datatyp for tweets
+      type: object
+      properties:
+        Searchterm:
+          description: Searchterm from tweet
+          type: string
+        Timestamp:
+          description: Timestamp of tweet call
+          type: integer
+        Data:
+          $ref: '#/components/schemas/Data'
+        Includes:
+          $ref: '#/components/schemas/Includes'
+    Data:
+      type: object
+      properties:
+        ID:
+          type: string
+        Text:
+          type: string
+        Attachements:
+          $ref: '#/components/schemas/Attachements'
+    Attachements:
+      type: object
+      properties:
+        MediaKeys:
+          type: array
+          items:
+            type: string
+    Includes:
+      type: object
+      properties:
+        Media:
+          type: array
+          items:
+            $ref: '#/components/schemas/Media'
+    Media:
+      type: object
+      properties:
+        MediaKey:
+          type: string
+        PreviewImageURL:
+          type: string
+    User:
+      type: object
+      required:
+        - Username
+        - Password
+      properties:
+        Username:
+          description: Name of User
+          type: string
+        Password:
+          description: Password of User
+          type: string
+    History:
+      type: object
+      properties:
+        Username:
+          type: string
+        Searchterm:
+          type: array
+          items:
+            type: string
+            pattern: ^\+\d{8,}$
+            minLength: 1
