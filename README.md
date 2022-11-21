@@ -1,15 +1,13 @@
 # APIGenerator
 
-## Bachelor Thesis Jan-Philipp Andresen
-
-### Thematik
+### Projektbeschreibung
 
 Tool zur Generierung und Update von API-Schnittstellen durch eine Spezifikationsdatei nach dem OpenAPI v. 3.0 Standard.
 Geschäftslogik und generierter Code sind soweit voneinander getrennt, das die zu erstellende Geschäftslogik bei einem neu generieren
 nicht überschrieben wird und damit weiter vorhanden ist. Der Compiler macht dann in der Geschäftslogik über etwaige Änderungen
 aufmerksam.
 
-### Struktur
+### Projekt Struktur
 
 Dokumentation liegt im Ordner `documents`. Zum Einstieg in das Projekt und wie dieses Aufgebaut ist sind hier
 Dokumentationen vorhanden.
